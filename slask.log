@@ -4165,3 +4165,45 @@ SyntaxError: invalid syntax
 2015-05-18 15:26:35,845:WARNING:RESPONSE TYPE  <type 'list'>
 2015-05-18 15:26:37,096:WARNING:RESPONSE TYPE  <type 'list'>
 2015-05-18 16:01:13,573:WARNING:RESPONSE TYPE  <type 'list'>
+2015-05-20 17:11:05,507:DEBUG:plugin: plugins\atlasianconfig.py
+2015-05-20 17:11:05,509:DEBUG:plugin: plugins\billjira.py
+2015-05-20 17:11:05,581:DEBUG:attaching billjira.<function on_message at 0x0238DBB0> to message
+2015-05-20 17:11:05,581:DEBUG:plugin: plugins\calc.py
+2015-05-20 17:11:05,625:DEBUG:attaching calc.<function on_message at 0x023D5DB0> to message
+2015-05-20 17:11:05,625:DEBUG:plugin: plugins\emoji.py
+2015-05-20 17:11:05,628:DEBUG:attaching emoji.<function on_message at 0x023D5EF0> to message
+2015-05-20 17:11:05,628:DEBUG:plugin: plugins\emojicodedict.py
+2015-05-20 17:11:05,628:DEBUG:plugin: plugins\flip.py
+2015-05-20 17:11:05,628:DEBUG:attaching flip.<function on_message at 0x023D5F70> to message
+2015-05-20 17:11:05,628:DEBUG:plugin: plugins\genesis.py
+2015-05-20 17:11:05,628:DEBUG:attaching genesis.<function on_message at 0x023EA0B0> to message
+2015-05-20 17:11:05,628:DEBUG:plugin: plugins\gif.py
+2015-05-20 17:11:05,630:DEBUG:attaching gif.<function on_message at 0x023EA130> to message
+2015-05-20 17:11:05,630:DEBUG:plugin: plugins\google.py
+2015-05-20 17:11:05,630:DEBUG:attaching google.<function on_message at 0x023EA270> to message
+2015-05-20 17:11:05,630:DEBUG:plugin: plugins\help.py
+2015-05-20 17:11:05,631:DEBUG:attaching help.<function on_message at 0x023EA2B0> to message
+2015-05-20 17:11:05,631:DEBUG:plugin: plugins\image.py
+2015-05-20 17:11:05,631:DEBUG:attaching image.<function on_message at 0x023EA370> to message
+2015-05-20 17:11:05,631:DEBUG:plugin: plugins\liveontheedge.py
+2015-05-20 17:11:05,631:DEBUG:attaching liveontheedge.<function on_message at 0x023EA4F0> to message
+2015-05-20 17:11:05,631:DEBUG:plugin: plugins\love.py
+2015-05-20 17:11:05,632:DEBUG:attaching love.<function on_message at 0x023EA570> to message
+2015-05-20 17:11:05,632:DEBUG:plugin: plugins\map.py
+2015-05-20 17:11:05,632:DEBUG:attaching map.<function on_message at 0x023EA5F0> to message
+2015-05-20 17:11:05,632:DEBUG:plugin: plugins\stock.py
+2015-05-20 17:11:05,634:DEBUG:attaching stock.<function on_message at 0x023EA730> to message
+2015-05-20 17:11:05,634:DEBUG:plugin: plugins\stockphoto.py
+2015-05-20 17:11:05,634:DEBUG:attaching stockphoto.<function on_message at 0x023EA870> to message
+2015-05-20 17:11:05,634:DEBUG:plugin: plugins\thankyou.py
+2015-05-20 17:11:05,634:DEBUG:attaching thankyou.<function on_message at 0x023EA970> to message
+2015-05-20 17:11:05,634:DEBUG:plugin: plugins\thedanflandance.py
+2015-05-20 17:11:05,635:DEBUG:attaching thedanflandance.<function on_message at 0x023EA9F0> to message
+2015-05-20 17:11:05,635:DEBUG:plugin: plugins\translate.py
+2015-05-20 17:11:05,637:DEBUG:attaching translate.<function on_message at 0x023EABF0> to message
+2015-05-20 17:11:05,637:DEBUG:plugin: plugins\weather.py
+2015-05-20 17:11:05,638:DEBUG:attaching weather.<function on_message at 0x023EAD70> to message
+2015-05-20 17:11:05,638:DEBUG:plugin: plugins\wiki.py
+2015-05-20 17:11:05,638:DEBUG:attaching wiki.<function on_message at 0x023EAE70> to message
+2015-05-20 17:11:05,638:DEBUG:plugin: plugins\youtube.py
+2015-05-20 17:11:05,638:DEBUG:attaching youtube.<function on_message at 0x023EAFB0> to message
