@@ -1,0 +1,32 @@
+bill murray tweaks
+- greetings plugin (hi, hello, hey, sup, whats up,...) see jira.py for python parsing
+- question plugin (asked random question)
+- jira plugin
+- sadtrombone.com
+-have it #askreed  random questions throughout the day
+			random questions from Yahoo Answers!!
+- It should translate yiddish phrases (any language)
+- What does the fox say
+
+http://levinotik.com/how-we-deploy-from-slack/
+
+
+
+dan gif
+
+
+
+
+
+*************RESEARCH******************************
+http://www.nltk.org/
+http://www.nltk.org/api/nltk.chat.html
+
+https://github.com/pteichman/cobe/wiki/Getting-started
+
+
+
+https://api.slack.com/docs/attachments
+
+
+(([a-z]{2})|(zh-CN)|(zh-TW)), (.*)
