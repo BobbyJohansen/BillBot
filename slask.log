@@ -4251,3 +4251,404 @@ SyntaxError: invalid syntax
 2015-06-18 11:59:39,825:DEBUG:attaching youtube.<function on_message at 0x026E4870> to message
 2015-06-18 12:01:11,931:WARNING:RESPONSE TYPE  <type 'list'>
 2015-06-18 12:01:39,489:WARNING:RESPONSE TYPE  <type 'list'>
+2015-09-28 13:47:35,282:DEBUG:plugin: plugins\atlasianconfig.py
+2015-09-28 13:47:35,286:DEBUG:plugin: plugins\billjira.py
+2015-09-28 13:47:35,427:DEBUG:attaching billjira.<function on_message at 0x02EA34B0> to message
+2015-09-28 13:47:35,427:DEBUG:plugin: plugins\calc.py
+2015-09-28 13:47:35,634:DEBUG:attaching calc.<function on_message at 0x02EF86B0> to message
+2015-09-28 13:47:35,635:DEBUG:plugin: plugins\emoji.py
+2015-09-28 13:47:35,668:DEBUG:attaching emoji.<function on_message at 0x02EF87F0> to message
+2015-09-28 13:47:35,668:DEBUG:plugin: plugins\emojicodedict.py
+2015-09-28 13:47:35,668:DEBUG:plugin: plugins\flip.py
+2015-09-28 13:47:35,680:DEBUG:attaching flip.<function on_message at 0x02EF8870> to message
+2015-09-28 13:47:35,681:DEBUG:plugin: plugins\genesis.py
+2015-09-28 13:47:35,690:DEBUG:attaching genesis.<function on_message at 0x02EF8970> to message
+2015-09-28 13:47:35,690:DEBUG:plugin: plugins\gif.py
+2015-09-28 13:47:35,703:DEBUG:attaching gif.<function on_message at 0x02EF89F0> to message
+2015-09-28 13:47:35,703:DEBUG:plugin: plugins\google.py
+2015-09-28 13:47:35,714:DEBUG:attaching google.<function on_message at 0x02EF8B30> to message
+2015-09-28 13:47:35,716:DEBUG:plugin: plugins\help.py
+2015-09-28 13:47:35,719:DEBUG:attaching help.<function on_message at 0x02EF8B70> to message
+2015-09-28 13:47:35,720:DEBUG:plugin: plugins\image.py
+2015-09-28 13:47:35,723:DEBUG:attaching image.<function on_message at 0x02EF8C30> to message
+2015-09-28 13:47:35,723:DEBUG:plugin: plugins\liveontheedge.py
+2015-09-28 13:47:35,727:DEBUG:attaching liveontheedge.<function on_message at 0x02EF8DB0> to message
+2015-09-28 13:47:35,727:DEBUG:plugin: plugins\love.py
+2015-09-28 13:47:35,732:DEBUG:attaching love.<function on_message at 0x02EF8E30> to message
+2015-09-28 13:47:35,732:DEBUG:plugin: plugins\map.py
+2015-09-28 13:47:35,750:DEBUG:attaching map.<function on_message at 0x02EF8EB0> to message
+2015-09-28 13:47:35,750:DEBUG:plugin: plugins\stock.py
+2015-09-28 13:47:35,767:DEBUG:attaching stock.<function on_message at 0x02F11030> to message
+2015-09-28 13:47:35,767:DEBUG:plugin: plugins\stockphoto.py
+2015-09-28 13:47:35,772:DEBUG:attaching stockphoto.<function on_message at 0x02F11170> to message
+2015-09-28 13:47:35,772:DEBUG:plugin: plugins\thankyou.py
+2015-09-28 13:47:35,776:DEBUG:attaching thankyou.<function on_message at 0x02F11270> to message
+2015-09-28 13:47:35,776:DEBUG:plugin: plugins\thedanflandance.py
+2015-09-28 13:47:35,792:DEBUG:attaching thedanflandance.<function on_message at 0x02F112F0> to message
+2015-09-28 13:47:35,792:DEBUG:plugin: plugins\translate.py
+2015-09-28 13:47:35,799:DEBUG:attaching translate.<function on_message at 0x02F114F0> to message
+2015-09-28 13:47:35,806:DEBUG:plugin: plugins\weather.py
+2015-09-28 13:47:35,812:DEBUG:attaching weather.<function on_message at 0x02F11670> to message
+2015-09-28 13:47:35,812:DEBUG:plugin: plugins\wiki.py
+2015-09-28 13:47:35,825:DEBUG:attaching wiki.<function on_message at 0x02F11770> to message
+2015-09-28 13:47:35,825:DEBUG:plugin: plugins\youtube.py
+2015-09-28 13:47:35,842:DEBUG:attaching youtube.<function on_message at 0x02F118B0> to message
+2015-09-28 13:48:21,403:WARNING:RESPONSE TYPE  <type 'list'>
+2015-09-28 13:48:21,846:WARNING:RESPONSE: <Response [500]>
+2015-09-28 13:48:27,318:WARNING:RESPONSE TYPE  <type 'list'>
+2015-09-28 13:48:53,625:WARNING:RESPONSE TYPE  <type 'list'>
+2015-09-28 14:44:12,848:DEBUG:plugin: plugins\atlasianconfig.py
+2015-09-28 14:44:12,848:DEBUG:plugin: plugins\billjira.py
+2015-09-28 14:44:13,023:DEBUG:attaching billjira.<function on_message at 0x02E6C4B0> to message
+2015-09-28 14:44:13,023:DEBUG:plugin: plugins\calc.py
+2015-09-28 14:44:13,194:DEBUG:attaching calc.<function on_message at 0x02EBC6B0> to message
+2015-09-28 14:44:13,194:DEBUG:plugin: plugins\emoji.py
+2015-09-28 14:44:13,305:DEBUG:attaching emoji.<function on_message at 0x02EBC7F0> to message
+2015-09-28 14:44:13,306:DEBUG:plugin: plugins\emojicodedict.py
+2015-09-28 14:44:13,306:DEBUG:plugin: plugins\flip.py
+2015-09-28 14:44:13,319:DEBUG:attaching flip.<function on_message at 0x02EBC870> to message
+2015-09-28 14:44:13,319:DEBUG:plugin: plugins\genesis.py
+2015-09-28 14:44:13,328:DEBUG:attaching genesis.<function on_message at 0x02EBC970> to message
+2015-09-28 14:44:13,328:DEBUG:plugin: plugins\gif.py
+2015-09-28 14:44:13,339:DEBUG:attaching gif.<function on_message at 0x02EBC9F0> to message
+2015-09-28 14:44:13,339:DEBUG:plugin: plugins\google.py
+2015-09-28 14:44:13,342:DEBUG:attaching google.<function on_message at 0x02EBCB30> to message
+2015-09-28 14:44:13,342:DEBUG:plugin: plugins\help.py
+2015-09-28 14:44:13,342:DEBUG:attaching help.<function on_message at 0x02EBCB70> to message
+2015-09-28 14:44:13,344:DEBUG:plugin: plugins\image.py
+2015-09-28 14:44:13,345:DEBUG:attaching image.<function on_message at 0x02EBCC30> to message
+2015-09-28 14:44:13,345:DEBUG:plugin: plugins\liveontheedge.py
+2015-09-28 14:44:13,346:DEBUG:attaching liveontheedge.<function on_message at 0x02EBCDB0> to message
+2015-09-28 14:44:13,346:DEBUG:plugin: plugins\love.py
+2015-09-28 14:44:13,346:DEBUG:attaching love.<function on_message at 0x02EBCE30> to message
+2015-09-28 14:44:13,348:DEBUG:plugin: plugins\map.py
+2015-09-28 14:44:13,355:DEBUG:attaching map.<function on_message at 0x02EBCEB0> to message
+2015-09-28 14:44:13,355:DEBUG:plugin: plugins\stock.py
+2015-09-28 14:44:13,361:DEBUG:attaching stock.<function on_message at 0x02ED5030> to message
+2015-09-28 14:44:13,361:DEBUG:plugin: plugins\stockphoto.py
+2015-09-28 14:44:13,362:DEBUG:attaching stockphoto.<function on_message at 0x02ED5170> to message
+2015-09-28 14:44:13,362:DEBUG:plugin: plugins\thankyou.py
+2015-09-28 14:44:13,369:DEBUG:attaching thankyou.<function on_message at 0x02ED5270> to message
+2015-09-28 14:44:13,369:DEBUG:plugin: plugins\thedanflandance.py
+2015-09-28 14:44:13,375:DEBUG:attaching thedanflandance.<function on_message at 0x02ED52F0> to message
+2015-09-28 14:44:13,375:DEBUG:plugin: plugins\translate.py
+2015-09-28 14:44:13,382:DEBUG:attaching translate.<function on_message at 0x02ED54F0> to message
+2015-09-28 14:44:13,382:DEBUG:plugin: plugins\weather.py
+2015-09-28 14:44:13,384:DEBUG:attaching weather.<function on_message at 0x02ED5670> to message
+2015-09-28 14:44:13,384:DEBUG:plugin: plugins\wiki.py
+2015-09-28 14:44:13,397:DEBUG:attaching wiki.<function on_message at 0x02ED5770> to message
+2015-09-28 14:44:13,397:DEBUG:plugin: plugins\youtube.py
+2015-09-28 14:44:13,403:DEBUG:attaching youtube.<function on_message at 0x02ED58B0> to message
+2015-09-28 14:44:40,601:WARNING:RESPONSE TYPE  <type 'list'>
+2015-09-28 14:44:40,763:WARNING:RESPONSE: <Response [500]>
+2015-09-28 14:45:48,085:DEBUG:plugin: plugins\atlasianconfig.py
+2015-09-28 14:45:48,085:DEBUG:plugin: plugins\billjira.py
+2015-09-28 14:45:48,115:DEBUG:attaching billjira.<function on_message at 0x02FCC4B0> to message
+2015-09-28 14:45:48,115:DEBUG:plugin: plugins\calc.py
+2015-09-28 14:45:48,131:DEBUG:attaching calc.<function on_message at 0x0301C6B0> to message
+2015-09-28 14:45:48,131:DEBUG:plugin: plugins\emoji.py
+2015-09-28 14:45:48,131:DEBUG:attaching emoji.<function on_message at 0x0301C7F0> to message
+2015-09-28 14:45:48,131:DEBUG:plugin: plugins\emojicodedict.py
+2015-09-28 14:45:48,131:DEBUG:plugin: plugins\flip.py
+2015-09-28 14:45:48,132:DEBUG:attaching flip.<function on_message at 0x0301C870> to message
+2015-09-28 14:45:48,132:DEBUG:plugin: plugins\genesis.py
+2015-09-28 14:45:48,132:DEBUG:attaching genesis.<function on_message at 0x0301C970> to message
+2015-09-28 14:45:48,132:DEBUG:plugin: plugins\gif.py
+2015-09-28 14:45:48,134:DEBUG:attaching gif.<function on_message at 0x0301C9F0> to message
+2015-09-28 14:45:48,134:DEBUG:plugin: plugins\google.py
+2015-09-28 14:45:48,134:DEBUG:attaching google.<function on_message at 0x0301CB30> to message
+2015-09-28 14:45:48,134:DEBUG:plugin: plugins\help.py
+2015-09-28 14:45:48,134:DEBUG:attaching help.<function on_message at 0x0301CB70> to message
+2015-09-28 14:45:48,134:DEBUG:plugin: plugins\image.py
+2015-09-28 14:45:48,134:DEBUG:attaching image.<function on_message at 0x0301CC30> to message
+2015-09-28 14:45:48,134:DEBUG:plugin: plugins\liveontheedge.py
+2015-09-28 14:45:48,134:DEBUG:attaching liveontheedge.<function on_message at 0x0301CDB0> to message
+2015-09-28 14:45:48,134:DEBUG:plugin: plugins\love.py
+2015-09-28 14:45:48,134:DEBUG:attaching love.<function on_message at 0x0301CE30> to message
+2015-09-28 14:45:48,134:DEBUG:plugin: plugins\map.py
+2015-09-28 14:45:48,135:DEBUG:attaching map.<function on_message at 0x0301CEB0> to message
+2015-09-28 14:45:48,135:DEBUG:plugin: plugins\stock.py
+2015-09-28 14:45:48,135:DEBUG:attaching stock.<function on_message at 0x03035030> to message
+2015-09-28 14:45:48,135:DEBUG:plugin: plugins\stockphoto.py
+2015-09-28 14:45:48,137:DEBUG:attaching stockphoto.<function on_message at 0x03035170> to message
+2015-09-28 14:45:48,137:DEBUG:plugin: plugins\thankyou.py
+2015-09-28 14:45:48,137:DEBUG:attaching thankyou.<function on_message at 0x03035270> to message
+2015-09-28 14:45:48,137:DEBUG:plugin: plugins\thedanflandance.py
+2015-09-28 14:45:48,137:DEBUG:attaching thedanflandance.<function on_message at 0x030352F0> to message
+2015-09-28 14:45:48,137:DEBUG:plugin: plugins\translate.py
+2015-09-28 14:45:48,138:DEBUG:attaching translate.<function on_message at 0x030354F0> to message
+2015-09-28 14:45:48,138:DEBUG:plugin: plugins\weather.py
+2015-09-28 14:45:48,138:DEBUG:attaching weather.<function on_message at 0x03035670> to message
+2015-09-28 14:45:48,138:DEBUG:plugin: plugins\wiki.py
+2015-09-28 14:45:48,138:DEBUG:attaching wiki.<function on_message at 0x03035770> to message
+2015-09-28 14:45:48,138:DEBUG:plugin: plugins\youtube.py
+2015-09-28 14:45:48,138:DEBUG:attaching youtube.<function on_message at 0x030358B0> to message
+2015-09-28 14:47:40,145:WARNING:RESPONSE TYPE  <type 'list'>
+2015-09-28 14:47:51,063:WARNING:RESPONSE TYPE  <type 'list'>
+2015-09-28 14:48:16,424:WARNING:RESPONSE TYPE  <type 'list'>
+2015-09-28 14:48:16,605:WARNING:RESPONSE: <Response [500]>
+2015-09-28 14:49:57,273:DEBUG:plugin: plugins\atlasianconfig.py
+2015-09-28 14:49:57,273:DEBUG:plugin: plugins\billjira.py
+2015-09-28 14:49:57,302:DEBUG:attaching billjira.<function on_message at 0x02FDA530> to message
+2015-09-28 14:49:57,302:DEBUG:plugin: plugins\calc.py
+2015-09-28 14:49:57,318:DEBUG:attaching calc.<function on_message at 0x03031730> to message
+2015-09-28 14:49:57,318:DEBUG:plugin: plugins\emoji.py
+2015-09-28 14:49:57,319:DEBUG:attaching emoji.<function on_message at 0x03031870> to message
+2015-09-28 14:49:57,319:DEBUG:plugin: plugins\emojicodedict.py
+2015-09-28 14:49:57,319:DEBUG:plugin: plugins\flip.py
+2015-09-28 14:49:57,319:DEBUG:attaching flip.<function on_message at 0x030318F0> to message
+2015-09-28 14:49:57,319:DEBUG:plugin: plugins\genesis.py
+2015-09-28 14:49:57,319:DEBUG:attaching genesis.<function on_message at 0x030319F0> to message
+2015-09-28 14:49:57,319:DEBUG:plugin: plugins\gif.py
+2015-09-28 14:49:57,319:DEBUG:attaching gif.<function on_message at 0x03031A70> to message
+2015-09-28 14:49:57,319:DEBUG:plugin: plugins\google.py
+2015-09-28 14:49:57,319:DEBUG:attaching google.<function on_message at 0x03031BB0> to message
+2015-09-28 14:49:57,321:DEBUG:plugin: plugins\help.py
+2015-09-28 14:49:57,321:DEBUG:attaching help.<function on_message at 0x03031BF0> to message
+2015-09-28 14:49:57,321:DEBUG:plugin: plugins\image.py
+2015-09-28 14:49:57,321:DEBUG:attaching image.<function on_message at 0x03031CB0> to message
+2015-09-28 14:49:57,321:DEBUG:plugin: plugins\liveontheedge.py
+2015-09-28 14:49:57,321:DEBUG:attaching liveontheedge.<function on_message at 0x03031E30> to message
+2015-09-28 14:49:57,322:DEBUG:plugin: plugins\love.py
+2015-09-28 14:49:57,322:DEBUG:attaching love.<function on_message at 0x03031EB0> to message
+2015-09-28 14:49:57,322:DEBUG:plugin: plugins\map.py
+2015-09-28 14:49:57,322:DEBUG:attaching map.<function on_message at 0x03031F30> to message
+2015-09-28 14:49:57,322:DEBUG:plugin: plugins\stock.py
+2015-09-28 14:49:57,322:DEBUG:attaching stock.<function on_message at 0x030440B0> to message
+2015-09-28 14:49:57,322:DEBUG:plugin: plugins\stockphoto.py
+2015-09-28 14:49:57,322:DEBUG:attaching stockphoto.<function on_message at 0x030441F0> to message
+2015-09-28 14:49:57,322:DEBUG:plugin: plugins\thankyou.py
+2015-09-28 14:49:57,322:DEBUG:attaching thankyou.<function on_message at 0x030442F0> to message
+2015-09-28 14:49:57,322:DEBUG:plugin: plugins\thedanflandance.py
+2015-09-28 14:49:57,323:DEBUG:attaching thedanflandance.<function on_message at 0x03044370> to message
+2015-09-28 14:49:57,323:DEBUG:plugin: plugins\translate.py
+2015-09-28 14:49:57,323:DEBUG:attaching translate.<function on_message at 0x03044570> to message
+2015-09-28 14:49:57,323:DEBUG:plugin: plugins\weather.py
+2015-09-28 14:49:57,323:DEBUG:attaching weather.<function on_message at 0x030446F0> to message
+2015-09-28 14:49:57,325:DEBUG:plugin: plugins\wiki.py
+2015-09-28 14:49:57,325:DEBUG:attaching wiki.<function on_message at 0x030447F0> to message
+2015-09-28 14:49:57,325:DEBUG:plugin: plugins\youtube.py
+2015-09-28 14:49:57,325:DEBUG:attaching youtube.<function on_message at 0x03044930> to message
+2015-09-28 14:50:12,513:WARNING:RESPONSE TYPE  <type 'list'>
+2015-09-28 14:50:12,674:WARNING:RESPONSE: <Response [500]>
+2015-09-28 14:52:06,365:DEBUG:plugin: plugins\atlasianconfig.py
+2015-09-28 14:52:06,365:DEBUG:plugin: plugins\billjira.py
+2015-09-28 14:52:06,391:DEBUG:attaching billjira.<function on_message at 0x03357A70> to message
+2015-09-28 14:52:06,391:DEBUG:plugin: plugins\calc.py
+2015-09-28 14:52:06,407:DEBUG:attaching calc.<function on_message at 0x03384C70> to message
+2015-09-28 14:52:06,407:DEBUG:plugin: plugins\emoji.py
+2015-09-28 14:52:06,408:DEBUG:attaching emoji.<function on_message at 0x03384DB0> to message
+2015-09-28 14:52:06,408:DEBUG:plugin: plugins\emojicodedict.py
+2015-09-28 14:52:06,408:DEBUG:plugin: plugins\flip.py
+2015-09-28 14:52:06,408:DEBUG:attaching flip.<function on_message at 0x03384E30> to message
+2015-09-28 14:52:06,408:DEBUG:plugin: plugins\genesis.py
+2015-09-28 14:52:06,410:DEBUG:attaching genesis.<function on_message at 0x03384F30> to message
+2015-09-28 14:52:06,410:DEBUG:plugin: plugins\gif.py
+2015-09-28 14:52:06,410:DEBUG:attaching gif.<function on_message at 0x03384FB0> to message
+2015-09-28 14:52:06,410:DEBUG:plugin: plugins\google.py
+2015-09-28 14:52:06,410:DEBUG:attaching google.<function on_message at 0x0339C130> to message
+2015-09-28 14:52:06,410:DEBUG:plugin: plugins\help.py
+2015-09-28 14:52:06,411:DEBUG:attaching help.<function on_message at 0x0339C170> to message
+2015-09-28 14:52:06,411:DEBUG:plugin: plugins\image.py
+2015-09-28 14:52:06,411:DEBUG:attaching image.<function on_message at 0x0339C230> to message
+2015-09-28 14:52:06,411:DEBUG:plugin: plugins\liveontheedge.py
+2015-09-28 14:52:06,411:DEBUG:attaching liveontheedge.<function on_message at 0x0339C3B0> to message
+2015-09-28 14:52:06,411:DEBUG:plugin: plugins\love.py
+2015-09-28 14:52:06,411:DEBUG:attaching love.<function on_message at 0x0339C430> to message
+2015-09-28 14:52:06,411:DEBUG:plugin: plugins\map.py
+2015-09-28 14:52:06,411:DEBUG:attaching map.<function on_message at 0x0339C4B0> to message
+2015-09-28 14:52:06,411:DEBUG:plugin: plugins\stock.py
+2015-09-28 14:52:06,413:DEBUG:attaching stock.<function on_message at 0x0339C5F0> to message
+2015-09-28 14:52:06,413:DEBUG:plugin: plugins\stockphoto.py
+2015-09-28 14:52:06,413:DEBUG:attaching stockphoto.<function on_message at 0x0339C730> to message
+2015-09-28 14:52:06,413:DEBUG:plugin: plugins\thankyou.py
+2015-09-28 14:52:06,413:DEBUG:attaching thankyou.<function on_message at 0x0339C830> to message
+2015-09-28 14:52:06,413:DEBUG:plugin: plugins\thedanflandance.py
+2015-09-28 14:52:06,414:DEBUG:attaching thedanflandance.<function on_message at 0x0339C8B0> to message
+2015-09-28 14:52:06,414:DEBUG:plugin: plugins\translate.py
+2015-09-28 14:52:06,414:DEBUG:attaching translate.<function on_message at 0x0339CAB0> to message
+2015-09-28 14:52:06,414:DEBUG:plugin: plugins\weather.py
+2015-09-28 14:52:06,414:DEBUG:attaching weather.<function on_message at 0x0339CC30> to message
+2015-09-28 14:52:06,414:DEBUG:plugin: plugins\wiki.py
+2015-09-28 14:52:06,414:DEBUG:attaching wiki.<function on_message at 0x0339CD30> to message
+2015-09-28 14:52:06,414:DEBUG:plugin: plugins\youtube.py
+2015-09-28 14:52:06,415:DEBUG:attaching youtube.<function on_message at 0x0339CE70> to message
+2015-09-28 14:52:17,210:WARNING:RESPONSE TYPE  <type 'list'>
+2015-09-28 14:52:17,382:WARNING:RESPONSE: <Response [500]>
+2015-09-28 14:55:41,164:DEBUG:plugin: plugins\atlasianconfig.py
+2015-09-28 14:55:41,164:DEBUG:plugin: plugins\billjira.py
+2015-09-28 14:55:41,197:DEBUG:attaching billjira.<function on_message at 0x0327CC70> to message
+2015-09-28 14:55:41,197:DEBUG:plugin: plugins\calc.py
+2015-09-28 14:55:41,217:DEBUG:attaching calc.<function on_message at 0x032D0E30> to message
+2015-09-28 14:55:41,217:DEBUG:plugin: plugins\emoji.py
+2015-09-28 14:55:41,219:DEBUG:attaching emoji.<function on_message at 0x032D0F70> to message
+2015-09-28 14:55:41,219:DEBUG:plugin: plugins\emojicodedict.py
+2015-09-28 14:55:41,219:DEBUG:plugin: plugins\flip.py
+2015-09-28 14:55:41,219:DEBUG:attaching flip.<function on_message at 0x032E8030> to message
+2015-09-28 14:55:41,220:DEBUG:plugin: plugins\genesis.py
+2015-09-28 14:55:41,220:DEBUG:attaching genesis.<function on_message at 0x032E8130> to message
+2015-09-28 14:55:41,220:DEBUG:plugin: plugins\gif.py
+2015-09-28 14:55:41,220:DEBUG:attaching gif.<function on_message at 0x032E81B0> to message
+2015-09-28 14:55:41,220:DEBUG:plugin: plugins\google.py
+2015-09-28 14:55:41,220:DEBUG:attaching google.<function on_message at 0x032E82F0> to message
+2015-09-28 14:55:41,220:DEBUG:plugin: plugins\help.py
+2015-09-28 14:55:41,220:DEBUG:attaching help.<function on_message at 0x032E8330> to message
+2015-09-28 14:55:41,220:DEBUG:plugin: plugins\image.py
+2015-09-28 14:55:41,220:DEBUG:attaching image.<function on_message at 0x032E83F0> to message
+2015-09-28 14:55:41,220:DEBUG:plugin: plugins\liveontheedge.py
+2015-09-28 14:55:41,221:DEBUG:attaching liveontheedge.<function on_message at 0x032E8570> to message
+2015-09-28 14:55:41,221:DEBUG:plugin: plugins\love.py
+2015-09-28 14:55:41,221:DEBUG:attaching love.<function on_message at 0x032E85F0> to message
+2015-09-28 14:55:41,221:DEBUG:plugin: plugins\map.py
+2015-09-28 14:55:41,221:DEBUG:attaching map.<function on_message at 0x032E8670> to message
+2015-09-28 14:55:41,221:DEBUG:plugin: plugins\stock.py
+2015-09-28 14:55:41,223:DEBUG:attaching stock.<function on_message at 0x032E87B0> to message
+2015-09-28 14:55:41,223:DEBUG:plugin: plugins\stockphoto.py
+2015-09-28 14:55:41,223:DEBUG:attaching stockphoto.<function on_message at 0x032E88F0> to message
+2015-09-28 14:55:41,223:DEBUG:plugin: plugins\thankyou.py
+2015-09-28 14:55:41,223:DEBUG:attaching thankyou.<function on_message at 0x032E89F0> to message
+2015-09-28 14:55:41,223:DEBUG:plugin: plugins\thedanflandance.py
+2015-09-28 14:55:41,223:DEBUG:attaching thedanflandance.<function on_message at 0x032E8A70> to message
+2015-09-28 14:55:41,223:DEBUG:plugin: plugins\translate.py
+2015-09-28 14:55:41,224:DEBUG:attaching translate.<function on_message at 0x032E8C70> to message
+2015-09-28 14:55:41,224:DEBUG:plugin: plugins\weather.py
+2015-09-28 14:55:41,224:DEBUG:attaching weather.<function on_message at 0x032E8DF0> to message
+2015-09-28 14:55:41,224:DEBUG:plugin: plugins\wiki.py
+2015-09-28 14:55:41,226:DEBUG:attaching wiki.<function on_message at 0x032E8EF0> to message
+2015-09-28 14:55:41,226:DEBUG:plugin: plugins\youtube.py
+2015-09-28 14:55:41,226:DEBUG:attaching youtube.<function on_message at 0x032ED070> to message
+2015-09-28 14:55:50,098:WARNING:RESPONSE TYPE  <type 'list'>
+2015-09-28 14:55:50,259:WARNING:RESPONSE: <Response [500]>
+2015-09-28 14:58:03,460:DEBUG:plugin: plugins\atlasianconfig.py
+2015-09-28 14:58:03,460:DEBUG:plugin: plugins\billjira.py
+2015-09-28 14:58:03,604:DEBUG:attaching billjira.<function on_message at 0x0329BC30> to message
+2015-09-28 14:58:03,604:DEBUG:plugin: plugins\calc.py
+2015-09-28 14:58:03,621:DEBUG:attaching calc.<function on_message at 0x032F6DF0> to message
+2015-09-28 14:58:03,621:DEBUG:plugin: plugins\emoji.py
+2015-09-28 14:58:03,621:DEBUG:attaching emoji.<function on_message at 0x032F6F30> to message
+2015-09-28 14:58:03,621:DEBUG:plugin: plugins\emojicodedict.py
+2015-09-28 14:58:03,621:DEBUG:plugin: plugins\flip.py
+2015-09-28 14:58:03,622:DEBUG:attaching flip.<function on_message at 0x032F6FB0> to message
+2015-09-28 14:58:03,622:DEBUG:plugin: plugins\genesis.py
+2015-09-28 14:58:03,622:DEBUG:attaching genesis.<function on_message at 0x0330D0F0> to message
+2015-09-28 14:58:03,622:DEBUG:plugin: plugins\gif.py
+2015-09-28 14:58:03,622:DEBUG:attaching gif.<function on_message at 0x0330D170> to message
+2015-09-28 14:58:03,624:DEBUG:plugin: plugins\google.py
+2015-09-28 14:58:03,624:DEBUG:attaching google.<function on_message at 0x0330D2B0> to message
+2015-09-28 14:58:03,624:DEBUG:plugin: plugins\help.py
+2015-09-28 14:58:03,624:DEBUG:attaching help.<function on_message at 0x0330D2F0> to message
+2015-09-28 14:58:03,624:DEBUG:plugin: plugins\image.py
+2015-09-28 14:58:03,625:DEBUG:attaching image.<function on_message at 0x0330D3B0> to message
+2015-09-28 14:58:03,625:DEBUG:plugin: plugins\liveontheedge.py
+2015-09-28 14:58:03,625:DEBUG:attaching liveontheedge.<function on_message at 0x0330D530> to message
+2015-09-28 14:58:03,625:DEBUG:plugin: plugins\love.py
+2015-09-28 14:58:03,625:DEBUG:attaching love.<function on_message at 0x0330D5B0> to message
+2015-09-28 14:58:03,625:DEBUG:plugin: plugins\map.py
+2015-09-28 14:58:03,625:DEBUG:attaching map.<function on_message at 0x0330D630> to message
+2015-09-28 14:58:03,625:DEBUG:plugin: plugins\stock.py
+2015-09-28 14:58:03,625:DEBUG:attaching stock.<function on_message at 0x0330D770> to message
+2015-09-28 14:58:03,625:DEBUG:plugin: plugins\stockphoto.py
+2015-09-28 14:58:03,625:DEBUG:attaching stockphoto.<function on_message at 0x0330D8B0> to message
+2015-09-28 14:58:03,625:DEBUG:plugin: plugins\thankyou.py
+2015-09-28 14:58:03,627:DEBUG:attaching thankyou.<function on_message at 0x0330D9B0> to message
+2015-09-28 14:58:03,627:DEBUG:plugin: plugins\thedanflandance.py
+2015-09-28 14:58:03,627:DEBUG:attaching thedanflandance.<function on_message at 0x0330DA30> to message
+2015-09-28 14:58:03,627:DEBUG:plugin: plugins\translate.py
+2015-09-28 14:58:03,628:DEBUG:attaching translate.<function on_message at 0x0330DC30> to message
+2015-09-28 14:58:03,628:DEBUG:plugin: plugins\weather.py
+2015-09-28 14:58:03,628:DEBUG:attaching weather.<function on_message at 0x0330DDB0> to message
+2015-09-28 14:58:03,628:DEBUG:plugin: plugins\wiki.py
+2015-09-28 14:58:03,628:DEBUG:attaching wiki.<function on_message at 0x0330DEB0> to message
+2015-09-28 14:58:03,628:DEBUG:plugin: plugins\youtube.py
+2015-09-28 14:58:03,628:DEBUG:attaching youtube.<function on_message at 0x03311030> to message
+2015-09-28 14:58:11,257:WARNING:RESPONSE TYPE  <type 'list'>
+2015-09-28 14:58:11,443:WARNING:RESPONSE: <Response [500]>
+2015-09-28 15:01:36,602:DEBUG:plugin: plugins\atlasianconfig.py
+2015-09-28 15:01:36,604:DEBUG:plugin: plugins\billjira.py
+2015-09-28 15:01:36,628:DEBUG:attaching billjira.<function on_message at 0x03317C30> to message
+2015-09-28 15:01:36,628:DEBUG:plugin: plugins\calc.py
+2015-09-28 15:01:36,644:DEBUG:attaching calc.<function on_message at 0x03345DF0> to message
+2015-09-28 15:01:36,645:DEBUG:plugin: plugins\emoji.py
+2015-09-28 15:01:36,645:DEBUG:attaching emoji.<function on_message at 0x03345F30> to message
+2015-09-28 15:01:36,647:DEBUG:plugin: plugins\emojicodedict.py
+2015-09-28 15:01:36,647:DEBUG:plugin: plugins\flip.py
+2015-09-28 15:01:36,647:DEBUG:attaching flip.<function on_message at 0x03345FB0> to message
+2015-09-28 15:01:36,647:DEBUG:plugin: plugins\genesis.py
+2015-09-28 15:01:36,647:DEBUG:attaching genesis.<function on_message at 0x0335D0F0> to message
+2015-09-28 15:01:36,647:DEBUG:plugin: plugins\gif.py
+2015-09-28 15:01:36,648:DEBUG:attaching gif.<function on_message at 0x0335D170> to message
+2015-09-28 15:01:36,648:DEBUG:plugin: plugins\google.py
+2015-09-28 15:01:36,648:DEBUG:attaching google.<function on_message at 0x0335D2B0> to message
+2015-09-28 15:01:36,648:DEBUG:plugin: plugins\help.py
+2015-09-28 15:01:36,648:DEBUG:attaching help.<function on_message at 0x0335D2F0> to message
+2015-09-28 15:01:36,648:DEBUG:plugin: plugins\image.py
+2015-09-28 15:01:36,648:DEBUG:attaching image.<function on_message at 0x0335D3B0> to message
+2015-09-28 15:01:36,648:DEBUG:plugin: plugins\liveontheedge.py
+2015-09-28 15:01:36,648:DEBUG:attaching liveontheedge.<function on_message at 0x0335D530> to message
+2015-09-28 15:01:36,648:DEBUG:plugin: plugins\love.py
+2015-09-28 15:01:36,650:DEBUG:attaching love.<function on_message at 0x0335D5B0> to message
+2015-09-28 15:01:36,650:DEBUG:plugin: plugins\map.py
+2015-09-28 15:01:36,650:DEBUG:attaching map.<function on_message at 0x0335D630> to message
+2015-09-28 15:01:36,650:DEBUG:plugin: plugins\stock.py
+2015-09-28 15:01:36,650:DEBUG:attaching stock.<function on_message at 0x0335D770> to message
+2015-09-28 15:01:36,651:DEBUG:plugin: plugins\stockphoto.py
+2015-09-28 15:01:36,651:DEBUG:attaching stockphoto.<function on_message at 0x0335D8B0> to message
+2015-09-28 15:01:36,651:DEBUG:plugin: plugins\thankyou.py
+2015-09-28 15:01:36,651:DEBUG:attaching thankyou.<function on_message at 0x0335D9B0> to message
+2015-09-28 15:01:36,651:DEBUG:plugin: plugins\thedanflandance.py
+2015-09-28 15:01:36,651:DEBUG:attaching thedanflandance.<function on_message at 0x0335DA30> to message
+2015-09-28 15:01:36,651:DEBUG:plugin: plugins\translate.py
+2015-09-28 15:01:36,651:DEBUG:attaching translate.<function on_message at 0x0335DC30> to message
+2015-09-28 15:01:36,651:DEBUG:plugin: plugins\weather.py
+2015-09-28 15:01:36,653:DEBUG:attaching weather.<function on_message at 0x0335DDB0> to message
+2015-09-28 15:01:36,653:DEBUG:plugin: plugins\wiki.py
+2015-09-28 15:01:36,653:DEBUG:attaching wiki.<function on_message at 0x0335DEB0> to message
+2015-09-28 15:01:36,653:DEBUG:plugin: plugins\youtube.py
+2015-09-28 15:01:36,654:DEBUG:attaching youtube.<function on_message at 0x03361030> to message
+2015-09-28 15:01:53,568:WARNING:RESPONSE TYPE  <type 'list'>
+2015-09-28 15:01:53,720:WARNING:RESPONSE: <Response [500]>
+2015-09-28 15:09:12,358:WARNING:RESPONSE TYPE  <type 'list'>
+2015-09-28 15:12:05,424:DEBUG:plugin: plugins\atlasianconfig.py
+2015-09-28 15:12:05,427:DEBUG:plugin: plugins\billjira.py
+2015-09-28 15:12:05,454:DEBUG:attaching billjira.<function on_message at 0x03347C30> to message
+2015-09-28 15:12:05,456:DEBUG:plugin: plugins\calc.py
+2015-09-28 15:12:05,477:DEBUG:attaching calc.<function on_message at 0x03375DF0> to message
+2015-09-28 15:12:05,477:DEBUG:plugin: plugins\emoji.py
+2015-09-28 15:12:05,494:DEBUG:attaching emoji.<function on_message at 0x03375F30> to message
+2015-09-28 15:12:05,494:DEBUG:plugin: plugins\emojicodedict.py
+2015-09-28 15:12:05,494:DEBUG:plugin: plugins\flip.py
+2015-09-28 15:12:05,496:DEBUG:attaching flip.<function on_message at 0x03375FB0> to message
+2015-09-28 15:12:05,496:DEBUG:plugin: plugins\genesis.py
+2015-09-28 15:12:05,513:DEBUG:attaching genesis.<function on_message at 0x0338D0F0> to message
+2015-09-28 15:12:05,513:DEBUG:plugin: plugins\gif.py
+2015-09-28 15:12:05,516:DEBUG:attaching gif.<function on_message at 0x0338D170> to message
+2015-09-28 15:12:05,516:DEBUG:plugin: plugins\google.py
+2015-09-28 15:12:05,529:DEBUG:attaching google.<function on_message at 0x0338D2B0> to message
+2015-09-28 15:12:05,529:DEBUG:plugin: plugins\help.py
+2015-09-28 15:12:05,530:DEBUG:attaching help.<function on_message at 0x0338D2F0> to message
+2015-09-28 15:12:05,530:DEBUG:plugin: plugins\image.py
+2015-09-28 15:12:05,532:DEBUG:attaching image.<function on_message at 0x0338D3B0> to message
+2015-09-28 15:12:05,533:DEBUG:plugin: plugins\liveontheedge.py
+2015-09-28 15:12:05,535:DEBUG:attaching liveontheedge.<function on_message at 0x0338D530> to message
+2015-09-28 15:12:05,536:DEBUG:plugin: plugins\love.py
+2015-09-28 15:12:05,538:DEBUG:attaching love.<function on_message at 0x0338D5B0> to message
+2015-09-28 15:12:05,538:DEBUG:plugin: plugins\map.py
+2015-09-28 15:12:05,546:DEBUG:attaching map.<function on_message at 0x0338D630> to message
+2015-09-28 15:12:05,546:DEBUG:plugin: plugins\stock.py
+2015-09-28 15:12:05,559:DEBUG:attaching stock.<function on_message at 0x0338D770> to message
+2015-09-28 15:12:05,559:DEBUG:plugin: plugins\stockphoto.py
+2015-09-28 15:12:05,572:DEBUG:attaching stockphoto.<function on_message at 0x0338D8B0> to message
+2015-09-28 15:12:05,572:DEBUG:plugin: plugins\thankyou.py
+2015-09-28 15:12:05,576:DEBUG:attaching thankyou.<function on_message at 0x0338D9B0> to message
+2015-09-28 15:12:05,578:DEBUG:plugin: plugins\thedanflandance.py
+2015-09-28 15:12:05,581:DEBUG:attaching thedanflandance.<function on_message at 0x0338DA30> to message
+2015-09-28 15:12:05,582:DEBUG:plugin: plugins\translate.py
+2015-09-28 15:12:05,588:DEBUG:attaching translate.<function on_message at 0x0338DC30> to message
+2015-09-28 15:12:05,588:DEBUG:plugin: plugins\weather.py
+2015-09-28 15:12:05,595:DEBUG:attaching weather.<function on_message at 0x0338DDB0> to message
+2015-09-28 15:12:05,595:DEBUG:plugin: plugins\wiki.py
+2015-09-28 15:12:05,598:DEBUG:attaching wiki.<function on_message at 0x0338DEB0> to message
+2015-09-28 15:12:05,598:DEBUG:plugin: plugins\youtube.py
+2015-09-28 15:12:05,605:DEBUG:attaching youtube.<function on_message at 0x03391030> to message
+2015-09-28 15:12:19,013:WARNING:RESPONSE TYPE  <type 'list'>
+2015-09-28 15:12:20,951:WARNING:RESPONSE: <Response [200]>

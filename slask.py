@@ -71,7 +71,7 @@ def run_hook(hooks, hook, data, server):
         if h: responses.append(h)
 
     return responses
-    
+
 def handle_message(client, event, hooks, config):
     # ignore bot messages and edits
     subtype = event.get("subtype", "")
@@ -94,8 +94,8 @@ def handle_message(client, event, hooks, config):
 
     for item in response:
         if 'fallback' in item:
-            url = "https://hooks.slack.com/services/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"
-            icon = 'http://cdn3.volusion.com/wqumr.dvkuc/v/vspfiles/photos/BFM-3.jpg'
+            url = "https://hooks.slack.com/services/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"
+            icon = 'http://theredlist.com/media/database/muses/icon/cinematic_men/1980/bill-murray/002-bill-murray-theredlist.jpg'
             channel = event["channel"]
             payload = {'channel': channel,'username': 'bill', 'icon_url': icon, 'attachments': response}
             reqresponse = requests.post(url, data=json.dumps(payload), timeout=5)
@@ -103,8 +103,8 @@ def handle_message(client, event, hooks, config):
             return "zug zug"
     #for item in response:
        # if 'fallback' in item:
-       
-            
+
+
 
     return "\n".join(response)
 

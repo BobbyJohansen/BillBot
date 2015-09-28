@@ -23,11 +23,15 @@ def atlassian_jira(user, action, parameter):
         'server': 'https://percussion.atlassian.net',
     }
     jira = JIRA(options, basic_auth=(jira_username, jira_password))
+    print jira.client_info
 
     if action == 'projects':
-        return projects(jira, parameter)
+        p = projects(jira, parameter)
+        return p
     elif action == 'info':
-        return info(jira, parameter)
+        i = info(jira, parameter)
+        print i
+        return i
     elif action == 'assign':
         return assign(jira, parameter)
     elif action == 'comment':
@@ -40,6 +44,7 @@ def atlassian_jira(user, action, parameter):
 
 def info(jira, parameter):
     issue = jira.issue(parameter, fields='summary,assignee,status')
+    print issue
     issue_id = parameter
     issue_url = "<" + issue.permalink() + "|" + issue_id + ">"
     summary = issue.fields.summary
@@ -59,6 +64,7 @@ def info(jira, parameter):
                             'fields': [{'title': 'Issue ID', 'value': issue_url, 'short': True},
                                        {'title': 'Assignee', 'value': assignee, 'short': True},
                                        {'title': 'Status', 'value': status, 'short': True}, ]}
+    print message
     return message
 
 
