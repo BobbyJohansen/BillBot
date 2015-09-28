@@ -100,6 +100,7 @@ def handle_message(client, event, hooks, config):
             payload = {'channel': channel,'username': 'bill', 'icon_url': icon, 'attachments': response}
             reqresponse = requests.post(url, data=json.dumps(payload), timeout=5)
             logging.warn("RESPONSE: {0}".format(reqresponse))
+            return
     #for item in response:
        # if 'fallback' in item:
 
