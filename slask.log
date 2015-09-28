@@ -4652,3 +4652,48 @@ SyntaxError: invalid syntax
 2015-09-28 15:12:05,605:DEBUG:attaching youtube.<function on_message at 0x03391030> to message
 2015-09-28 15:12:19,013:WARNING:RESPONSE TYPE  <type 'list'>
 2015-09-28 15:12:20,951:WARNING:RESPONSE: <Response [200]>
+2015-09-28 15:16:00,332:DEBUG:plugin: plugins\atlasianconfig.py
+2015-09-28 15:16:00,334:DEBUG:plugin: plugins\billjira.py
+2015-09-28 15:16:00,368:DEBUG:attaching billjira.<function on_message at 0x032FAC70> to message
+2015-09-28 15:16:00,368:DEBUG:plugin: plugins\calc.py
+2015-09-28 15:16:00,382:DEBUG:attaching calc.<function on_message at 0x03347E30> to message
+2015-09-28 15:16:00,384:DEBUG:plugin: plugins\emoji.py
+2015-09-28 15:16:00,384:DEBUG:attaching emoji.<function on_message at 0x03347F70> to message
+2015-09-28 15:16:00,384:DEBUG:plugin: plugins\emojicodedict.py
+2015-09-28 15:16:00,384:DEBUG:plugin: plugins\flip.py
+2015-09-28 15:16:00,384:DEBUG:attaching flip.<function on_message at 0x0335F030> to message
+2015-09-28 15:16:00,384:DEBUG:plugin: plugins\genesis.py
+2015-09-28 15:16:00,384:DEBUG:attaching genesis.<function on_message at 0x0335F130> to message
+2015-09-28 15:16:00,384:DEBUG:plugin: plugins\gif.py
+2015-09-28 15:16:00,385:DEBUG:attaching gif.<function on_message at 0x0335F1B0> to message
+2015-09-28 15:16:00,385:DEBUG:plugin: plugins\google.py
+2015-09-28 15:16:00,385:DEBUG:attaching google.<function on_message at 0x0335F2F0> to message
+2015-09-28 15:16:00,385:DEBUG:plugin: plugins\help.py
+2015-09-28 15:16:00,385:DEBUG:attaching help.<function on_message at 0x0335F330> to message
+2015-09-28 15:16:00,387:DEBUG:plugin: plugins\image.py
+2015-09-28 15:16:00,387:DEBUG:attaching image.<function on_message at 0x0335F3F0> to message
+2015-09-28 15:16:00,387:DEBUG:plugin: plugins\liveontheedge.py
+2015-09-28 15:16:00,387:DEBUG:attaching liveontheedge.<function on_message at 0x0335F570> to message
+2015-09-28 15:16:00,387:DEBUG:plugin: plugins\love.py
+2015-09-28 15:16:00,388:DEBUG:attaching love.<function on_message at 0x0335F5F0> to message
+2015-09-28 15:16:00,388:DEBUG:plugin: plugins\map.py
+2015-09-28 15:16:00,388:DEBUG:attaching map.<function on_message at 0x0335F670> to message
+2015-09-28 15:16:00,388:DEBUG:plugin: plugins\stock.py
+2015-09-28 15:16:00,388:DEBUG:attaching stock.<function on_message at 0x0335F7B0> to message
+2015-09-28 15:16:00,388:DEBUG:plugin: plugins\stockphoto.py
+2015-09-28 15:16:00,388:DEBUG:attaching stockphoto.<function on_message at 0x0335F8F0> to message
+2015-09-28 15:16:00,388:DEBUG:plugin: plugins\thankyou.py
+2015-09-28 15:16:00,388:DEBUG:attaching thankyou.<function on_message at 0x0335F9F0> to message
+2015-09-28 15:16:00,388:DEBUG:plugin: plugins\thedanflandance.py
+2015-09-28 15:16:00,390:DEBUG:attaching thedanflandance.<function on_message at 0x0335FA70> to message
+2015-09-28 15:16:00,390:DEBUG:plugin: plugins\translate.py
+2015-09-28 15:16:00,390:DEBUG:attaching translate.<function on_message at 0x0335FC70> to message
+2015-09-28 15:16:00,390:DEBUG:plugin: plugins\weather.py
+2015-09-28 15:16:00,391:DEBUG:attaching weather.<function on_message at 0x0335FDF0> to message
+2015-09-28 15:16:00,391:DEBUG:plugin: plugins\wiki.py
+2015-09-28 15:16:00,391:DEBUG:attaching wiki.<function on_message at 0x0335FEF0> to message
+2015-09-28 15:16:00,391:DEBUG:plugin: plugins\youtube.py
+2015-09-28 15:16:00,391:DEBUG:attaching youtube.<function on_message at 0x03364070> to message
+2015-09-28 15:16:17,447:WARNING:Got recoverable error from GET https://percussion.atlassian.net/rest/api/2/serverInfo, will retry [1/3] in 10s. Err: Atlassian's bug https://jira.atlassian.com/browse/JRA-41559
+2015-09-28 15:16:29,309:WARNING:RESPONSE TYPE  <type 'list'>
+2015-09-28 15:16:29,523:WARNING:RESPONSE: <Response [200]>
