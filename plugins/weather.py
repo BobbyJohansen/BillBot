@@ -20,11 +20,15 @@ iconmap = {
 }
 
 def weather(searchterm):
+    print 'weathering the storm'
     searchterm = quote(searchterm)
-    url = 'http://api.openweathermap.org/data/2.5/forecast/daily?q={0}&cnt=5&mode=json&units=imperial'
+    url = 'http://api.openweathermap.org/data/2.5/forecast/daily?q={0}&cnt=5&mode=json&units=imperial&APPID=0f86b804395e5ea7759da43fa3df4315'
     url = url.format(searchterm)
 
-    dat = requests.get(url).json()
+    print url
+    dat = requests.get(url)
+    print dat
+    dat = dat.json()
 
     msg = ["{0}: ".format(dat["city"]["name"])]
     for day in dat["list"]:

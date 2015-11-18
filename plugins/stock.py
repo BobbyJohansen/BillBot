@@ -4,18 +4,41 @@ import re
 import requests
 from bs4 import BeautifulSoup
 from urllib import quote
+import json
 
 
 def stockprice(ticker):
-    url = "https://www.google.com/finance?q={0}"
-    print(url.format(quote(ticker)))
-    soup = BeautifulSoup(requests.get(url.format(quote(ticker))).text)
-
+    print ('tickers')
+    url = "http://finance.yahoo.com/webservice/v1/symbols/{0}/quote?format=json"
+    # print(url.format(quote(ticker)))
+    # print (url.format(ticker))
+    # soup = BeautifulSoup(requests.get(url.format(quote(ticker))).text)
+    j = requests.get(url.format(quote(ticker)))
+    # print (soup.text)
+    # try:
+    #     company, ticker = re.findall(u"^(.+?)\xa0\xa0(.+?)\xa0", soup.text, re.M)[0]
+    #     price = soup.select("#price-panel .pr span")[0].text
+    #     change, pct = soup.select("#price-panel .nwp span")[0].text.split()
+    #     pct.strip('()')
+    
     try:
-        company, ticker = re.findall(u"^(.+?)\xa0\xa0(.+?)\xa0", soup.text, re.M)[0]
-        price = soup.select("#price-panel .pr span")[0].text
-        change, pct = soup.select("#price-panel .nwp span")[0].text.split()
-        pct.strip('()')
+        # print (j)
+        data = j.text
+        print (data)
+        print ('------------------------------')
+        resources = data["resources"]
+        print (resources)
+        company = resources[0]["name"]
+        price = resources[0]["price"]
+        print ('------------------------------')
+        print (resources["resource"])
+        # print (company)
+        # print (price)
+        # print ('the resources')
+        # print (resources)
+        change = ""
+        emoji = ""
+        pct = ""
 
         emoji = ":chart_with_upwards_trend:" if change.startswith("+") else ":chart_with_downwards_trend:"
 
@@ -26,8 +49,11 @@ def stockprice(ticker):
 
 def on_message(msg, server):
     text = msg.get("text", "")
-    match = re.findall(r"$\w{0,4}", text)
-    if not match: return
+    match = re.findall(r"\$\w{0,4}$", text)
+    # if not match: 
+    #     print ('no stock ticker match')
+    #     return
 
-    prices = [stockprice(ticker[1:]) for ticker in match]
-    return "\n".join(p for p in prices if p)
+    # prices = [stockprice(ticker[1:]) for ticker in match]
+    # return "\n".join(p for p in prices if p)
+    return "not implemented, go away"
