@@ -66,6 +66,8 @@ def crescendostats(user,action,parameter):
     elif action == 'get blacklist':
         return getBlackList()
     elif action == 'blacklist tenant':
+        print 'param'
+        print parameter
         if parameter is not None and parameter != "":
             blackListTenant(parameter)
             return getBlackList()
@@ -135,8 +137,9 @@ def tenantCount():
     
     msg = fieldHelper("Tenant Count", len(crescendoUtils.getTenantIDs(CRESCENDO_ENV, getBlackTenants())))
     print msg
-    
-    return msg
+    l = []
+    l.append(msg)
+    return l
 
 def listAllTenants():
     '''
@@ -250,8 +253,9 @@ def userCount():
     userList = crescendoUtils.getUsersWithTenantBlackList(CRESCENDO_ENV, getBlackTenants())
     
     msg = fieldHelper("User Count", len(userList))
-    
-    return msg
+    l = []
+    l.append(msg)
+    return l
     
     
     
@@ -343,10 +347,19 @@ def on_message(msg, server):
     text = msg.get("text", "")
     user = msg.get("user_name", "")
     print "Text: " + text
-    match = re.match(r"bill crescendostats (metrics over time|help|unblacklist tenant|get blacklist|blacklist tenant|summary|tenants|tenant count|users|user count|people count|total signups|onboarded|(.*)) ?(.*)", text)
+    match = re.match(r"bill crescendostats (metrics over time|help|unblacklist tenant|get blacklist|blacklist tenant|summary|tenants|tenant count|users|user count|people count|total signups|onboarded|.*) ?(.*)", text)
     if not match:
         return
 
     action = match.group(1)
     parameter = match.group(2)
+
+    if action is None:
+        print '3 group'
+        action = match.group(4)
+        
+    print 'action' 
+    print action
+    print 'param'
+    print parameter
     return crescendostats(user, action, parameter)

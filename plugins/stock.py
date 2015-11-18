@@ -53,7 +53,6 @@ def on_message(msg, server):
     match = re.findall(r"\$\w{0,4}$", text)
     if not match: 
         return
-
     # prices = [stockprice(ticker[1:]) for ticker in match]
     # return "\n".join(p for p in prices if p)
     return "not implemented go away"
