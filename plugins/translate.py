@@ -32,17 +32,21 @@ def translate(to_translate, to_langage="auto", langage="en"):
 	page = urllib2.urlopen(request).read()
 	result = page[page.find(before_trans)+len(before_trans):]
 	result = result.split("<")[0]
+	print result
 	return result
 
 def on_message(msg, server):
+    print 'translating'
     text = msg.get("text", "")
-    match = re.match(r"bill translate to (([a-z]{2})|(zh-CN)|(zh-TW)), (.*)", text)
-    if not match: return
+    match = re.match(r"bill translate (([a-z]{2})|(zh-CN)|(zh-TW)) (.*)", text)
+    if not match:
+        print "no translate match"
+        return
 
     return translate(match.group(5),match.group(1))
 
 if __name__ == '__main__':
     query = 'bill translate to de, hello world'
-    match = re.match(r"bill translate to (([a-z]{2})|(zh-CN)|(zh-TW)), (.*)", query)
+    match = re.match(r"bill translate (([a-z]{2})|(zh-CN)|(zh-TW)) (.*)", query)
     print translate(match.group(5),match.group(1))
     

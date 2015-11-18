@@ -1,4 +1,4 @@
-"""-bill crescendostats summary returns a summary of crescendostats,         -bill crescendostats tenants returns a list of all tenants,             -bill crescendostats tenant count returns a count of all tenants,           -bill crescendostats users returns a list of all users,            -bill crescendostats user count returns the total users in the system,           -bill crescendostats people count returns the total unique users,           -bill crescendostats blacklist returns the black list"""
+"""-bill crescendostats help returns a list of all crescendo commands"""
 import re
 import json
 import simplejson
@@ -105,7 +105,7 @@ def unBlackListEmail(email):
 def fieldHelper(name, item, color="#14892c"):
     ret = []
     ret.append({'short': True, 'title': name, 'value':str(item)})
-    message = {'fallback': 'Crescendo Tenants', 'pretext': 'tenants', 'color': color, 'fields': ret}
+    message = {'fallback': 'Crescendo Tenants', 'pretext': 'Crescendo', 'color': color, 'fields': ret}
     return message
     
 def fieldsHelper(names, items, color="#14892c"):
