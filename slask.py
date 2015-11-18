@@ -92,15 +92,37 @@ def handle_message(client, event, hooks, config):
     response = run_hook(hooks, "message", event, {"client": client, "config": config, "hooks": hooks})
     logging.warn("RESPONSE TYPE  {0}".format(type(response)))
 
-    for item in response:
-        if 'fallback' in item:
-            url = "https://hooks.slack.com/services/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"
-            icon = 'http://theredlist.com/media/database/muses/icon/cinematic_men/1980/bill-murray/002-bill-murray-theredlist.jpg'
-            channel = event["channel"]
-            payload = {'channel': channel,'username': 'bill', 'icon_url': icon, 'attachments': response}
-            reqresponse = requests.post(url, data=json.dumps(payload), timeout=5)
-            logging.warn("RESPONSE: {0}".format(reqresponse))
-            return
+
+    if len(response) == 0:
+        return
+    if type(response[0]) is str:
+        return "\n".join(response)
+        
+    elif type(response[0]) is list:
+        print ('list me timbers')
+        url = "https://hooks.slack.com/services/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"
+        icon = 'http://theredlist.com/media/database/muses/icon/cinematic_men/1980/bill-murray/002-bill-murray-theredlist.jpg'
+        channel = event["channel"]
+        # Don't fucking touch the index. It makes everything wonderful.
+        payload = {'channel': channel,'username': 'bill', 'icon_url': icon, 'attachments': response[0]}
+        reqresponse = requests.post(url, data=json.dumps(payload), timeout=5)
+        
+        logging.warn("RESPONSE: {0}".format(reqresponse))
+        return
+        
+    elif type(response) is dict:
+        for item in response:
+            if 'fallback' in item:
+                url = "https://hooks.slack.com/services/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"
+                icon = 'http://theredlist.com/media/database/muses/icon/cinematic_men/1980/bill-murray/002-bill-murray-theredlist.jpg'
+                channel = event["channel"]
+                payload = {'channel': channel,'username': 'bill', 'icon_url': icon, 'attachments': response}
+                reqresponse = requests.post(url, data=json.dumps(payload), timeout=5)
+                logging.warn("RESPONSE: {0}".format(reqresponse))
+                return
+    
+        
+        
     #for item in response:
        # if 'fallback' in item:
 

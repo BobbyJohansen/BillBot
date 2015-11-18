@@ -1,11 +1,4 @@
-"""bill jira - !help atlassian-jira
-!jira info <issue-id>
-!jira assign <issue-id> <username>
-!jira comment <issue-id> <comment>
-!jira create <project-key> <summary>
-!jira close <issue-id> <comment>
-!jira projects
-"""
+
 
 import re
 import json
@@ -40,7 +33,18 @@ def atlassian_jira(user, action, parameter):
         return create(user, jira, parameter)
     elif action == 'close':
         return close(user, jira, parameter)
+    elif action == 'help':
+        return getHelp()
 
+def getHelp():
+    return """bill jira - !help atlassian-jira
+            jira info <issue-id>
+            jira assign <issue-id> <username>
+            jira comment <issue-id> <comment>
+            jira create <project-key> <summary>
+            jira close <issue-id> <comment>
+            jira projects
+            """
 
 def info(jira, parameter):
     issue = jira.issue(parameter, fields='summary,assignee,status')
@@ -65,7 +69,9 @@ def info(jira, parameter):
                                        {'title': 'Assignee', 'value': assignee, 'short': True},
                                        {'title': 'Status', 'value': status, 'short': True}, ]}
     print message
-    return message
+    l = []
+    l.append(message)
+    return l
 
 
 def assign(jira, parameter):
@@ -136,7 +142,7 @@ def on_message(msg, server):
     text = msg.get("text", "")
     user = msg.get("user_name", "")
     parameter = None
-    m = re.match(r"bill jira (info|assign|comment|create|close|projects) ?(.*)", text)
+    m = re.match(r"bill jira (help|info|assign|comment|create|close|projects) ?(.*)", text)
     if not m:
         return
 

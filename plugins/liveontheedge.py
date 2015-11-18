@@ -1,4 +1,4 @@
-"""bill youtube <search term> return the first youtube search result for <search term>"""
+"""bill how do you want to be remembered?"""
 
 import re
 from urllib import quote
