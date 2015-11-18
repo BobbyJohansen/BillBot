@@ -1,21 +1,54 @@
 """-bill crescendostats summary returns a summary of crescendostats,         -bill crescendostats tenants returns a list of all tenants,             -bill crescendostats tenant count returns a count of all tenants,           -bill crescendostats users returns a list of all users,            -bill crescendostats user count returns the total users in the system,           -bill crescendostats people count returns the total unique users,           -bill crescendostats blacklist returns the black list"""
 import re
 import json
+import simplejson
 from utils import crescendoUtils
 from utils import dynamo
 import random
-
-blacklist = {'tenants': ['-1000', '02i37000000115gAAA','02i37000000JI3bAAG','02i3700000017rVAAQ','02i370000001375AAA','02i37000000122AAAQ','02i37000000114iAAA','02i3700000011mtAAA','02i37000000114YAAQ','02i37000000114TAAQ','02i37000000114dAAA' ] }
+import gif
 
 CRESCENDO_ENV = dynamo.getDynamoEnvironment()
 
-BLACKTENANTS = blacklist['tenants']
-BLACKEMAILS = []
+# social stats
+socialPosts = 0
+publishedBlogs = 0
+totalBlogs = 0
+failedPosts = 0
+
+def writeConfig(black):
+    print 'writing config'
+    with open('plugins/blacklist.cfg', 'w') as f:
+        f.write(json.dumps(black))
+        f.close()
+        
+def loadConfig():
+    print 'loading config'
+    config = {}
+    with open('plugins/blacklist.cfg', 'r') as f:
+        config = simplejson.load(f)
+        f.close()
+    return config
+        
+def getBlackTenants():
+    config = loadConfig()
+    BLACKTENANTS = []
+    for id in config['tenants']:
+        BLACKTENANTS.append(str(id))
+    print BLACKTENANTS
+    return BLACKTENANTS
+    
+# BLACKEMAILS = []
+# for email in config['emails']:
+#     BLACKEMAILS.append(str(email))
 
 def crescendostats(user,action,parameter):
     print "Action! " + action
     if action == 'tenants':
         return listAllTenants()
+    elif action == 'help':
+        return getHelp()
+    elif action == 'metrics over time':
+        return gif.gif('funny graph')
     elif action == 'tenant count':
         return tenantCount()
     elif action == 'users':
@@ -25,16 +58,49 @@ def crescendostats(user,action,parameter):
     elif action == 'people count':
         return peopleCount()
     elif action == 'total signups':
-        pass
+        return gif.gif("not done yet")
     elif action == 'onboarded':
-        pass
+        return gif.gif("not done yet")
     elif action == 'summary':
         return summary()
-    elif action == 'blacklist':
+    elif action == 'get blacklist':
         return getBlackList()
+    elif action == 'blacklist tenant':
+        if parameter is not None and parameter != "":
+            blackListTenant(parameter)
+            return getBlackList()
+        else:
+            return "YOU SHALL NOT PASS! (without a tenant id)"
+    elif action == 'unblacklist tenant':
+        if parameter is not None and parameter != "":
+            unBlackListTenant(parameter)
+            return getBlackList()
+        else:
+            return gif.gif("YOU SHALL NOT PASS")
     else:
         print 'BAD THINGS BILL BAD BAD THINGS'
-        return 'BAD THINGS BILL BAD BAD THINGS'
+        return gif.gif('you done fucked up')
+        
+def blackListTenant(tenantId):
+    BLACKTENANTS = getBlackTenants()
+    BLACKTENANTS.append(tenantId)
+    BLACKLIST = loadConfig()
+    BLACKLIST['tenants'] = BLACKTENANTS
+    writeConfig(BLACKLIST)
+
+def blackListEmail(email):
+    pass
+
+def unBlackListTenant(tenantId):
+    BLACKTENANTS = getBlackTenants()
+    if tenantId in BLACKTENANTS:
+        BLACKTENANTS.remove(tenantId)
+        BLACKLIST = loadConfig()
+        BLACKLIST['tenants'] = BLACKTENANTS
+        writeConfig(BLACKLIST)  
+
+def unBlackListEmail(email):
+    pass
 
 def fieldHelper(name, item, color="#14892c"):
     ret = []
@@ -67,7 +133,7 @@ def tenantCount():
     '''
     global CRESCENDO_ENV
     
-    msg = fieldHelper("Tenant Count", len(crescendoUtils.getTenantIDs(CRESCENDO_ENV, BLACKTENANTS)))
+    msg = fieldHelper("Tenant Count", len(crescendoUtils.getTenantIDs(CRESCENDO_ENV, getBlackTenants())))
     print msg
     
     return msg
@@ -77,7 +143,7 @@ def listAllTenants():
     listAllTenants returns [{name:tenantName, id:id}]
     '''
     global CRESCENDO_ENV
-    tenants = crescendoUtils.getTenantIDs(CRESCENDO_ENV,BLACKTENANTS)
+    tenants = crescendoUtils.getTenantIDs(CRESCENDO_ENV,getBlackTenants())
     
     ret = []
     
@@ -113,24 +179,42 @@ def listAllTenants():
     
     return ret
     
-def totalBlogCount():
+def setSocialStats():
     global CRESCENDO_ENV
-    tenants = crescendoUtils.getTenantIDs(CRESCENDO_ENV,BLACKTENANTS)
+    global socialPosts
+    global publishedBlogs
+    global totalBlogs
+    global failedPosts
     
-    ret = []
+    socialPosts = 0
+    failedPosts = 0
     publishedBlogs = 0
     totalBlogs = 0
+    
+    tenants = crescendoUtils.getTenantIDs(CRESCENDO_ENV,getBlackTenants())
     for t in tenants:
         tStats = crescendoUtils.getTenantSocialInfo(CRESCENDO_ENV, t[0])
+        # tally social stuffs
+        socialPosts += tStats['twit_T']
+        socialPosts += tStats['twit_F']
+        socialPosts += tStats['fb_T']
+        socialPosts += tStats['fb_F']
+        socialPosts += tStats['li_T']
+        socialPosts += tStats['li_F']
+        
+        failedPosts += tStats['twit_F']
+        failedPosts += tStats['fb_F']
+        failedPosts += tStats['li_F']
+        
+        # tally blog stuffs
         for key in tStats['wpStats']:
             if key == 'published':
                 publishedBlogs += tStats['wpStats'][key]
             totalBlogs += tStats['wpStats'][key]
-    return totalBlogs
+        
     
 def listAllUsers():
-    global BLACKTENANTS
-    userList = crescendoUtils.getUsersWithTenantBlackList(CRESCENDO_ENV, BLACKTENANTS)
+    userList = crescendoUtils.getUsersWithTenantBlackList(CRESCENDO_ENV, getBlackTenants())
     tenants = {}
     
     for user in userList:
@@ -161,10 +245,9 @@ def userCount():
     Get the user count for every tenant
     Returns int
     '''
-    global BLACKTENANTS
     global CRESCENDO_ENV
     
-    userList = crescendoUtils.getUsersWithTenantBlackList(CRESCENDO_ENV, BLACKTENANTS)
+    userList = crescendoUtils.getUsersWithTenantBlackList(CRESCENDO_ENV, getBlackTenants())
     
     msg = fieldHelper("User Count", len(userList))
     
@@ -174,8 +257,7 @@ def userCount():
     
 def peopleCount():
     global CRESCENDO_ENV
-    global BLACKTENANTS
-    userList = crescendoUtils.getUsersWithTenantBlackList(CRESCENDO_ENV, BLACKTENANTS)
+    userList = crescendoUtils.getUsersWithTenantBlackList(CRESCENDO_ENV, getBlackTenants())
     
     emails = []
     
@@ -189,8 +271,14 @@ def peopleCount():
     
 def summary():
     global CRESCENDO_ENV
-    global BLACKTENANTS
-    userList = crescendoUtils.getUsersWithTenantBlackList(CRESCENDO_ENV, BLACKTENANTS)
+    global socialPosts
+    global publishedBlogs
+    global totalBlogs
+    global failedPosts
+    
+    print 'performing summary'
+    
+    userList = crescendoUtils.getUsersWithTenantBlackList(CRESCENDO_ENV, getBlackTenants())
     userCount = len(userList)
     
     emails = []
@@ -199,13 +287,13 @@ def summary():
             emails.append(user['email'])
             
     peopleCount = len(emails)
-    tenantCount = len(crescendoUtils.getTenantIDs(CRESCENDO_ENV, BLACKTENANTS))
+    tenantCount = len(crescendoUtils.getTenantIDs(CRESCENDO_ENV, getBlackTenants()))
     
-    blogCount = 0
-    socialCount = 0
+    # get the social stats
+    setSocialStats()
     
-    names = ['Tenant Count', 'User Count', 'People Count', 'Blog Count', 'Social Count']
-    values = [tenantCount,userCount,peopleCount,blogCount,socialCount]
+    names = ['Tenant Count', 'User Count', 'People Count', 'Blog Count', 'Blog Published Count', 'Social Count']
+    values = [tenantCount,userCount,peopleCount,totalBlogs,publishedBlogs,socialPosts]
     l = []
     message = fieldsHelper(names,values,randColor())
     l.append(message)
@@ -215,27 +303,39 @@ def summary():
 
 #####################################################################
 
-def blackListEmail(email):
-    pass
-
-def blackListTenant(tenandId):
-    pass
-
 def getBlackList():
     global CRESCENDO_ENV
-    global BLACKTENANTS
     
     ret = []
     fields = []
-    for tenant in BLACKTENANTS:
+    for tenant in getBlackTenants():
         fields.append( {'short': True, 'title': 'Tenant ID', 'value':str(tenant)} )
 
-    baseMessage = {'fallback': 'Tenant Black List Block', 'text': 'Black List', 'color': '#FFFFFF'}
+    baseMessage = {'fallback': 'Tenant Black List Block', 'text': 'Black List', 'color': '#000000'}
     baseMessage['fields'] = fields
         
     ret.append(baseMessage)
     
     return ret
+    
+def getHelp():
+    msg = """
+    -bill crescendostats summary returns a summary of crescendostats
+    -bill crescendostats tenants returns a list of all tenants,
+    -bill crescendostats tenant count returns a count of all tenants,
+    -bill crescendostats users returns a list of all users,
+    -bill crescendostats user count returns the total users in the system,
+    -bill crescendostats people count returns the total unique users,
+    -bill crescendostats get blacklist returns the black list
+    -bill crescendostats blacklist tenant <tenant-id> blacklists that tenant from all statistics
+    -bill crescendostats unblacklist tenant <tenant-id> removes that tenant from the blacklist re-enabling them in the statistics
+    -bill crescendostats total signups Not yet done but feel free to try
+    -bill crescendostats onboarded Not yet done but feel free to try
+    -bill crescendostats metrics over time
+    -bill crescendostats <anything else> will result in sass
+    """
+    return msg
+
 
 
 ######################################################################
@@ -243,9 +343,8 @@ def on_message(msg, server):
     text = msg.get("text", "")
     user = msg.get("user_name", "")
     print "Text: " + text
-    match = re.match(r"bill crescendostats (blacklist|summary|tenants|tenant count|users|user count|people count|tenant info|tenant blog count|tenant social count|total signups|onboarded) ?(.*)", text)
+    match = re.match(r"bill crescendostats (metrics over time|help|unblacklist tenant|get blacklist|blacklist tenant|summary|tenants|tenant count|users|user count|people count|total signups|onboarded|(.*)) ?(.*)", text)
     if not match:
-        print "no match"
         return
 
     action = match.group(1)
