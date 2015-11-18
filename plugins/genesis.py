@@ -8,6 +8,7 @@ from random import shuffle, randint
 
 def genesis():
     # http://ascii.textfiles.com/archives/4365
+    print 'genesis'
     page = randint(1,8)
     r = requests.get("https://secure.flickr.com/photos/textfiles/sets/72157646180733361/page%s/"%page)
     soup = BeautifulSoup(r.text)
@@ -16,6 +17,7 @@ def genesis():
 
     shuffle(images)
 
+    print len(images)
     return images[0] if images else ""
 
 def on_message(msg, server):
