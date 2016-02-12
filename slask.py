@@ -10,11 +10,15 @@ import time
 import traceback
 import requests
 import json
+import cleverbot
+import random
 
 from slackclient import SlackClient
 attach = 0
+cleverbotClient = None
 
 def init_log(config):
+    print("Logging init...")
     loglevel = config.get("loglevel", logging.INFO)
     logformat = config.get("logformat", '%(asctime)s:%(levelname)s:%(message)s')
     if config.get("logfile"):
@@ -38,7 +42,9 @@ def init_log(config):
     logging.root = logger
 
 def init_plugins(plugindir):
+    global cleverbotClient
     hooks = {}
+    cleverbotClient = cleverbot.Cleverbot()
 
     for plugin in glob(os.path.join(plugindir, "[!_]*.py")):
         logging.debug("plugin: {0}".format(plugin))
@@ -65,10 +71,42 @@ def init_plugins(plugindir):
     return hooks
 
 def run_hook(hooks, hook, data, server):
+    global cleverbotClient
     responses = []
+    print (data)
+
+    ids = ['asdf']#['U08U07DFS']
+
+    if 'text' in data:
+        data['text'] = data['text'].encode('utf8', 'ignore')
+
+    if 'user' in data:
+        if data['user'] in ids and cleverbot is not None:
+            response = str(cleverbotClient.ask(data['text'])).encode('utf8', 'ignore')
+            return [response]
+        else:
+            print ("Sending message")
+            token = "xoxb-11487746099-jplUbmssOFnzKyMmOApxdu8M"
+            user = ids[0]
+
+            # res = requests.get( 'https://slack.com/api/im.open', params={'token':token, 'user': user})
+            # if 'channel' in res.json():
+            #     postMessageUrl = "https://slack.com/api/chat.postMessage"
+            #     channel = res.json()['channel']['id']
+            #     requests.get( postMessageUrl, params={'token':token, 'channel':channel, 'text':str(cleverbotClient.ask(data['text'])).encode('utf8', 'ignore'), 'username':'bill', 'icon_url':'http://theredlist.com/media/database/muses/icon/cinematic_men/1980/bill-murray/002-bill-murray-theredlist.jpg' })
+
     for hook in hooks.get(hook, []):
         h = hook(data, server)
         if h: responses.append(h)
+
+    if len(responses) == 0:
+        words = data['text'].split(" ")
+        if len(words) > 1:
+            for word in words:
+                if 'bill' in word.lower():
+                    response = str(cleverbotClient.ask(data['text'])).encode('utf8', 'ignore')
+                    responses.append(response)
+
 
     return responses
 
@@ -140,8 +178,10 @@ def main(config):
     hooks = init_plugins("plugins")
 
     client = SlackClient(config["token"])
+    print("Created SlackClient...")
     if client.rtm_connect():
         users = client.server.users
+        print("Connected to Slack")
         while True:
             events = client.rtm_read()
             for event in events:
@@ -150,13 +190,19 @@ def main(config):
                 if handler:
                     response = handler(client, event, hooks, config)
                     if response:
+                        print (event)
                         client.rtm_send_message(event["channel"], response)
+            sys.stdout.flush()
+            sys.stderr.flush()
             time.sleep(1)
     else:
+        print("Error connecting to slack...")
+        print (str(client))
         logging.warn("Connection Failed, invalid token <{0}>?".format(config["token"]))
 
 if __name__=="__main__":
     from config import config
+    print("Found main...")
 
     init_log(config)
     main(config)

@@ -1,10 +1,56 @@
 from boto.dynamodb2.table import Table
+from boto.s3.key import Key
+import boto
+import datetime
 import requests
 import json
 
 #########################
 ### CRESCENDO HELPERS ###
 #########################
+
+def writeStatsToS3(titleCount, stats, name):
+    """
+    Writes stats to s3 under crescendo-bill
+
+    :param stats: list of stats to be saved as csv
+    :param name: str name of bucket\
+    :return: str link to file
+    """
+    conn = boto.connect_s3()
+    billBucket = conn.get_bucket('crescendo-bill')
+    key = Key(billBucket)
+
+    keyStr = str(name) + "_" + datetime.datetime.now().isoformat().split('.')[0] + ".csv"
+    key.key = keyStr
+
+    # set contents from file?
+    fs = open('temp.csv', 'w')
+    rowWidth = int(titleCount)
+    i = 0
+    for stat in stats:
+        if stat is not None:
+            if type(stat) == int:
+                fs.write(str(stat))
+            else:
+                stat = str(stat.encode('utf8', 'ignore'))
+                fs.write(stat)
+        else:
+            fs.write('None')
+        i += 1
+        if i == rowWidth:
+            fs.write("\n")
+            i = 0
+        else:
+            fs.write("\t")
+
+    fs.close()
+
+    key.set_contents_from_filename('temp.csv')
+
+    #link is valid for 365 days
+    return key.generate_url(31536000)
+
 
 def getTenantIDs(environment, blacklist):
     """
@@ -47,6 +93,9 @@ def getUsersWithTenantBlackList(environment, blacklist):
     # hash=tenant_id | range=id | email | enabled | password | user_profile | last_login_time | login_token
     tUserTable = Table(environment + "_idp_user")
     
+    tRoleTable = Table(environment + "_idp_role")
+    tDomainUserTable = Table(environment + "_idp_domainuser")
+    
     tenantResults = tInfoTable.scan()
     users = []
 
@@ -60,6 +109,26 @@ def getUsersWithTenantBlackList(environment, blacklist):
             user['uid'] = userItem['id']
             user['email'] = userItem['email']
             user['last_login_time'] = userItem['last_login_time']
+            
+            #get user profile from user table
+            userProfile = userItem['user_profile']
+            if userProfile != None:
+              jObj = json.loads(userProfile)
+              user['firstName'] = jObj['firstName']
+              user['lastName'] = jObj['lastName']
+              
+            #get role from IDP role table
+            user['roles'] = ''
+            
+            
+            for roles in tDomainUserTable.query(tenant_id__eq=res['id']):
+              if roles['user_id'] == userItem['id']:
+                user['roleIds'] = roles['roles']
+            
+            for role in tRoleTable.query(tenant_id__eq=res['id']):
+              if role['id'] in user['roleIds']:
+                user['roles'] += str(role['name']) + ', '
+                
             users.append(user)
     
     return users
@@ -70,12 +139,13 @@ def getTenantSocialInfo(environment, tid):
     :returns: {'fb_T':int, 'fb_F':int, 'twit_T':int, 'twit_F':int, 'li_T':int, 'li_F':int, 'wpStats':{}} 
     """
     # tenant_id (hash) | ticket (range) | status | network_type
-    tPostedItems = Table(environment + "_social-posted-item")
+   # tPostedItems = Table(environment + "_social-posted-item")
     
-    postsByTenant = tPostedItems.query(tenant_id__eq=tid)
+   # postsByTenant = tPostedItems.query(tenant_id__eq=tid)
     
-    ret = {'fb_T':0, 'fb_F':0, 'twit_T':0, 'twit_F':0, 'li_T':0, 'li_F':0, 'wpStats':{}} 
-    
+   # ret = {'fb_T':0, 'fb_F':0, 'twit_T':0, 'twit_F':0, 'li_T':0, 'li_F':0, 'wpStats':{}} 
+    ret = {'Facebook_published':0, 'Facebook_scheduled':0,'Twitter_published':0, 'Twitter_scheduled':0,'LinkedIn_published':0, 'LinkedIn_scheduled':0, 'inreview':0, 'funkystate':0, 'wpStats':{} }
+    '''
     for post in postsByTenant:
         
         key = ""
@@ -93,27 +163,42 @@ def getTenantSocialInfo(environment, tid):
         
         if key in ret:
             ret[key] += 1
+            '''
     
     # tenant_id (hash) | id | content_item | last_modified | type
-    tBlogs = Table(environment + "_content_items")
+    contentItems = Table(environment + "_content_items")
+    items = contentItems.query(tenant_id__eq=tid)
+
     
-    for blog in tBlogs.query(tenant_id__eq=tid):
-        if blog['type'] == "blogPost":
-            contentInfo = blog['content_item']
+    for item in items:
+        network = ""
+        state = ""
+        if item['type'] == "blogPost":
+            contentInfo = item['content_item']
             
             jObj = json.loads(contentInfo)
             
             if jObj['state'] not in ret['wpStats']:
                 ret['wpStats'][jObj['state']] = 0
             ret['wpStats'][jObj['state']] += 1
+            
+        elif item['type'] == "socialPost":
+            itemInfo = item['content_item']
+            jObj = json.loads(itemInfo)
+            state = jObj['state']
+            if jObj['channeltypes'] != None:
+              network = jObj['channeltypes'][0]
+              if state == 'inreview':
+                ret['inreview'] += 1
+              else:
+                ret[network + '_' + state] += 1
+            else:
+              ret['funkystate'] += 1
+               
+        elif item['type'] == "socialPostsWrapper":
+            ret['inreview'] += 1
     
     return ret
-            
-            
-            
-        
-    
-    
     
 
 def getTenantInfo(environment, tid):
